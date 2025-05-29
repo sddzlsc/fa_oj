@@ -1,0 +1,73 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Cource_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-cource_id" data-rule="required" data-source="cource/index" class="form-control selectpage" name="row[cource_id]" type="text" value="{$row.cource_id|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Typedata')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            {foreach name="typedataList" item="vo"}
+            <label for="row[typedata]-{$key}"><input id="row[typedata]-{$key}" name="row[typedata]" type="radio" value="{$key}" {in name="key" value="$row.typedata"}checked{/in} /> {$vo}</label> 
+            {/foreach}
+            </div>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Title')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-title" data-rule="required" class="form-control" name="row[title]" type="text" value="{$row.title|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Optionjson')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <dl class="fieldlist" data-name="row[optionjson]">
+                <dd>
+                    <ins>{:__('Key')}</ins>
+                    <ins>{:__('Value')}</ins>
+                </dd>
+                <dd><a href="javascript:;" class="btn btn-sm btn-success btn-append"><i class="fa fa-plus"></i> {:__('Append')}</a></dd>
+                <textarea name="row[optionjson]" class="form-control hide" cols="30" rows="5">{$row.optionjson|htmlentities}</textarea>
+            </dl>
+
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Answers')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-answers" class="form-control" name="row[answers]" type="text" value="{$row.answers|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Answerscontent')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-answerscontent" class="form-control editor" rows="5" name="row[answerscontent]" cols="50">{$row.answerscontent|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Diffdata')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            {foreach name="diffdataList" item="vo"}
+            <label for="row[diffdata]-{$key}"><input id="row[diffdata]-{$key}" name="row[diffdata]" type="radio" value="{$key}" {in name="key" value="$row.diffdata"}checked{/in} /> {$vo}</label> 
+            {/foreach}
+            </div>
+
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+        </div>
+    </div>
+</form>

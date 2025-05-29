@@ -1,7 +1,6 @@
 <?php
 
 namespace app\api\controller;
-
 use app\common\controller\Api;
 use app\common\exception\UploadException;
 use app\common\library\Upload;
